@@ -1,0 +1,341 @@
+* {
+    cursor: default;
+    user-select: none;
+}
+
+:root {
+    --font: Russo One;
+}
+
+body {
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+.racket {
+    position: absolute;
+    height: 250px;
+    aspect-ratio: 1/1.5;
+    top: 45%;
+    z-index: 10;
+}
+
+#left-racket {
+    left: 10%;
+    filter: grayscale(1);
+}
+
+#right-racket {
+    right: 10%;
+}
+
+#ball {
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 100%;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+}
+
+#table {
+    position: absolute;
+    left: 50%;
+    top: 33.5%;
+    height: 45%;
+    width: 50%;
+    translate: -50%;
+}
+
+#countdown {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background-color: #09662a;
+    min-width: 150px;
+    min-height: 150px;
+    text-align: center;
+    align-content: center;
+    font-size: 3rem;
+    color: white;
+    border-radius: 15%;
+    border: rgb(16, 174, 39) 5px solid;
+    display: none;
+    z-index: 25;
+    font-family: var(--font);
+}
+
+@keyframes countdown-animation {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 1.25;
+    }
+}
+
+#start-game-button {
+    background-color: #09662a;
+    border: 12px solid rgb(16, 174, 39);
+    z-index: 25;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+    border-radius: 4%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: all 0.3s;
+    font-family: var(--font);
+    line-height: 1.1;
+}
+#start-game-button:hover {
+    scale: 1.05;
+    font-size: 3rem;
+    filter: brightness(1.2);
+}
+
+#match-point {
+    background-color: rgb(145, 13, 13);
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    border: 5px solid  rgb(224, 17, 17);
+    padding-left: 5px;
+    padding-right: 5px;
+    left: 50%;
+    top: 70%;
+    translate: -50%;
+    z-index: 25;
+    display: none;
+    font-family: var(--font);
+}
+
+.control-info {
+    background-color: rgb(145, 13, 13);
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    border: 5px solid rgb(224, 17, 17);
+    padding-left: 5px;
+    padding-right: 5px;
+    bottom: 2%;
+    z-index: 25;
+    font-family: var(--font);
+    border-radius: 8px;
+}
+
+#left-control-info {
+    left: 10%;
+    background-color: rgb(9, 9, 97);
+    border-color: rgb(5, 5, 201);
+}
+
+#right-control-info {
+    right: 10%;
+}
+
+#serve-info {
+    background-color: #09662a;
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    border: 5px solid rgb(16, 174, 39);
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 50%;
+    z-index: 25;
+    display: none;
+    translate: 0% -50%;
+    font-family: var(--font);
+    border-radius: 8px;
+}
+
+.left-serve-pos {
+    left: 10%;
+}
+
+.right-serve-pos {
+    right: 10%;
+}
+
+#winner {
+    color: white;
+    position: absolute;
+    z-index: 25;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    display: none;
+    font-size: 3rem;
+    background-color: #09662a;
+    border: 5px solid rgb(16, 174, 39);
+    border-radius: 10px;
+    font-family: var(--font);
+    border-radius: 8px;
+}
+
+.blur {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.points {
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    background-color: #09662a;
+    border: 5px solid rgb(16, 174, 39);
+    z-index: 5;
+    min-width: 150px;
+    text-align: center;
+    left: 50%;
+    bottom: 2%;
+    z-index: 25;
+    font-family: var(--font);
+    border-radius: 8px;
+}
+
+#left-points {
+    translate: -125%;
+}
+
+#right-points {
+    translate: 25%;
+}
+
+.blue-fan {
+    position: absolute;
+    left: 26.2%;
+    z-index: 5;
+}
+
+.red-fan {
+    position: absolute;
+    right: 26.2%;
+    z-index: 5;
+}
+
+.left-hand-blue {
+    position: absolute;
+    translate: -24px;
+    left: 26.2%;
+    width: 130px;
+    height: 130px;
+    top: 100px;
+}
+
+.right-hand-blue {
+    position: absolute;
+    left: 26.2%;
+    translate: 50px;
+    width: 130px;
+    height: 130px;
+    top: 100px;
+}
+
+.left-hand-red {
+    position: absolute;
+    right: 26.2%;
+    translate: -50px;
+    width: 130px;
+    height: 130px;
+    top: 100px;
+}
+
+.right-hand-red {
+    position: absolute;
+    right: 26.2%;
+    translate: 24px;
+    width: 130px;
+    height: 130px;
+    top: 100px;
+}
+
+@keyframes jooo-left {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: 100deg;
+    }
+}
+
+@keyframes jooo-left-constant {
+    0% {
+        rotate: 100deg;
+    }
+    100% {
+        rotate: 90deg;
+    }
+}
+
+@keyframes jooo-right {
+    0% {
+        rotate: 0deg;
+    }
+    100% {
+        rotate: -100deg;
+    }
+}
+
+@keyframes jooo-right-constant {
+    0% {
+        rotate: -100deg;
+    }
+    100% {
+        rotate: -90deg;
+    }
+}
+
+@keyframes jooo-middle {
+    0% {
+        rotate: 5deg;
+    }
+    100% {
+        rotate: -5deg;
+    }
+}
+
+.lavicka-left {
+    position: absolute;
+    left: 15%;
+    height: 200px;
+    width: 30.75%;
+    top: 150px;
+    z-index: -1;
+}
+
+.lavicka-right {
+    position: absolute;
+    right: 15%;
+    height: 200px;
+    width: 30.75%;
+    top: 150px;
+    z-index: -1;
+}
+
+#logo {
+    position: absolute;
+    z-index: 50;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20%;
+    transition: all 0.1s;
+}

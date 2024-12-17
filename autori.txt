@@ -1,0 +1,4 @@
+Autoři
+
+Adam Kliment, 3.G - html, css, grafika
+Šimon Anděl, 3.G - html, javascript, fungování
