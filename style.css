@@ -48,8 +48,8 @@ body {
 #table {
     position: absolute;
     left: 50%;
-    top: 33.5%;
-    height: 45%;
+    top: 375px;
+    height: 425px;
     width: 50%;
     translate: -50%;
 }
@@ -107,11 +107,11 @@ body {
 }
 
 #match-point {
-    background-color: rgb(145, 13, 13);
+    background-color: #09662a;
     color: white;
     font-size: 3rem;
     position: absolute;
-    border: 5px solid  rgb(224, 17, 17);
+    border: 5px solid  rgb(16, 174, 39);
     padding-left: 5px;
     padding-right: 5px;
     left: 50%;
@@ -120,6 +120,7 @@ body {
     z-index: 25;
     display: none;
     font-family: var(--font);
+    border-radius: 10px;
 }
 
 .control-info {
